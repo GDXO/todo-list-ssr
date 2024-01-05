@@ -1,0 +1,68 @@
+{
+  "name": "todo-proj",
+  "version": "1.0.0",
+  "description": "Vue 开发 todo 应用",
+  "main": "index.js",
+  "scripts": {
+    "build:client": "cross-env NODE_ENV=product webpack --config build/webpack.config.client.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "lint": "eslint --ext .js,.vue client",
+    "preCommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run preCommit"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "Vue2",
+    "todo"
+  ],
+  "author": "GDXO",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.7.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.7",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.19.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.2",
+    "husky": "^8.0.3",
+    "image-webpack-loader": "^8.1.0",
+    "lint-staged": "^14.0.1",
+    "mini-css-extract-plugin": "^1.6.2",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^4.3.0",
+    "postcss-preset-env": "^9.3.0",
+    "style-loader": "^2.0.0",
+    "stylus": "^0.59.0",
+    "stylus-loader": "^4.3.3",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.11.1",
+    "vue-template-compiler": "^2.7.15",
+    "webpack": "^4.47.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.3",
+    "webpack-merge": "^5.10.0"
+  }
+}
