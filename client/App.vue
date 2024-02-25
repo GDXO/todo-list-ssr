@@ -2,7 +2,9 @@
   <div class="root">
     <div class="cover"></div>
     <PageHeader />
-    <Todo></Todo>
+    <p>{{ count }}</p>
+    <!-- <Todo></Todo> -->
+    <router-view />
     <PageFooter />
   </div>
 </template>
@@ -10,14 +12,23 @@
 <script>
 import PageHeader from '@/layout/Header.vue'
 import PageFooter from '@/layout/Footer.vue'
-import Todo from '@/views/todo.vue'
 
 export default {
   name: 'mainPage',
   components: {
     PageHeader,
-    PageFooter,
-    Todo
+    PageFooter
+  },
+  mounted () {
+    let i = 1
+    setInterval(() => {
+      this.$store.commit('updateCount', i++)
+    }, 1000)
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
   }
 }
 </script>

@@ -15,12 +15,11 @@ let config
 const devServer = {
   port: 8000,
   host: '0.0.0.0',
-  open: true,
   hot: true,
-  compress: true,
   overlay: {
     errors: true
-  }
+  },
+  historyApiFallback: true
 }
 
 const defaultPlugins = [
